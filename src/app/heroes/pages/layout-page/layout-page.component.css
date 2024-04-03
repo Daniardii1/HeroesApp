@@ -1,0 +1,9 @@
+mat-sidenav {
+  background-color: var(--primary-color);
+  width: 250px;
+}
+
+mat-toolbar {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}

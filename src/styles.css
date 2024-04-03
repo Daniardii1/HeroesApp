@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  --primary-color: #1C5B92;
+  --secondary-color: #E4E8EE;
+  --text-primary-color: #0c253b;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.spacer {
+  flex: 1 1 auto
+}
+
+.color-primary {
+  color: var(--primary-color) !important;
+}
+
+.color-secondary {
+  color: var(--secondary-color) !important;
+}
+
+.text-primary-color {
+  color: var(--text-primary-color) !important;
+}

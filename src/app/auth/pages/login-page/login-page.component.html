@@ -5,30 +5,31 @@
     border-2 border-round-xl
     py-4 col-8 col-offset-2" id="loginContainer">
 
-  <h2 class="text-xl font-medium mb-4">Sign In</h2>
+  <h2 class="text-xl font-medium color-primary mb-4">Sign In</h2>
 
   <mat-form-field class="w-8">
     <mat-label>User</mat-label>
     <input type="text" matInput placeholder="Nombre de usuario">
-    <mat-icon matSuffix>person</mat-icon>
+    <mat-icon matSuffix class="text-primary-color">person</mat-icon>
   </mat-form-field>
 
   <mat-form-field class="w-8">
     <mat-label>Password</mat-label>
     <input [type]="hidePassword ? 'password' : 'text'" matInput placeholder="Contraseña">
     <button mat-icon-button matSuffix (click)="changeHidePassword()">
-      <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+      <mat-icon class="text-primary-color">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
     </button>
   </mat-form-field>
 
   <button mat-raised-button color="basic" class="border-round-xl">
-    <mat-icon>login</mat-icon>
-    Login
+    <mat-icon class="color-primary">login</mat-icon>
+    <span class="color-primary">Login</span>
   </button>
 
   <div class="mt-4">
-    <p>
-      Don't have an account? <a routerLink="/auth/new-account"> Sign up </a>
+    <p class="text-primary-color">
+      Don't have an account?
+      <a routerLink="/auth/new-account"> Sign up </a>
     </p>
   </div>
 </div>

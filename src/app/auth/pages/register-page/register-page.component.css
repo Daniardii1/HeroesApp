@@ -2,3 +2,7 @@
   background-color: #E4E8EE;
   border-color: #1C5B92;
 }
+
+#title {
+  color: var(--primary-color);
+}
