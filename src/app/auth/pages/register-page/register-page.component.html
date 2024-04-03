@@ -1,0 +1,35 @@
+<div
+  class="flex
+    flex-column row-gap-1
+    align-items-center
+    border-2 border-round-xl
+    py-4 col-8 col-offset-2" id="registerContainer">
+
+  <h2 class="text-xl font-medium mb-4">Register</h2>
+
+    <mat-form-field class="w-8">
+      <mat-label>User</mat-label>
+      <input type="text" matInput placeholder="Nombre de usuario">
+    </mat-form-field>
+
+    <mat-form-field class="w-8">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput placeholder="Nombre de usuario">
+    </mat-form-field>
+
+    <mat-form-field class="w-8">
+      <mat-label>Password</mat-label>
+      <input matNativeControl type="text" matInput placeholder="Contraseña">
+    </mat-form-field>
+
+  <button mat-raised-button color="basic" class="border-round-xl">
+    <mat-icon>save</mat-icon>
+    Check in
+  </button>
+
+  <div class="mt-4">
+    <p>
+      Already have an account? <a routerLink="/auth/login"> Sign in</a>
+    </p>
+  </div>
+</div>
