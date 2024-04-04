@@ -3,6 +3,7 @@
 :root {
   --primary-color: #1C5B92;
   --secondary-color: #E4E8EE;
+  --neutral-color: #FEFAEE;
   --text-primary-color: #0c253b;
 }
 
@@ -24,4 +25,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .text-primary-color {
   color: var(--text-primary-color) !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;     
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eefbfec4;
+  border-radius: 4px;
 }

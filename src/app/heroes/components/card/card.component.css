@@ -1,0 +1,13 @@
+mat-card{
+  background-color: var(--secondary-color);
+}
+
+mat-chip-listbox {
+  max-height: 40px;
+  overflow: auto;
+}
+
+mat-chip {
+  background-color: var(--neutral-color) !important;
+}
+
