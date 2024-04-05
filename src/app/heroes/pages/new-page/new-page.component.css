@@ -1,0 +1,7 @@
+mat-card {
+  background-color: var(--secondary-color);
+}
+
+mat-form-field {
+  padding-block: 0;
+}

@@ -4,12 +4,25 @@
   --primary-color: #1C5B92;
   --secondary-color: #E4E8EE;
   --neutral-color: #FEFAEE;
-  --text-primary-color: #0c253b;
+  --warn-color: #ad0f0f;
+  --text-primary-color: #0C253B;
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--neutral-color);
+}
 
+.mdc-text-field--filled {
+  border-radius: 1rem !important;
+
+}
+
+.mdc-line-ripple {
+  display: none;
+}
 
 .spacer {
   flex: 1 1 auto
@@ -23,12 +36,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: var(--secondary-color) !important;
 }
 
+.color-warn {
+  color: var(--warn-color) !important;
+}
+
 .text-primary-color {
   color: var(--text-primary-color) !important;
 }
 
 .custom-container {
   background-color: var(--neutral-color);
+  height: 100vh;
 }
 
 

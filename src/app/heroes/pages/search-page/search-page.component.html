@@ -1,19 +1,52 @@
-<div class="flex flex-column">
-  <h3>Browser</h3>
+<div class="container custom-container p-5">
+  <div class="flex flex-column">
+    <h1 class="text-4xl font-medium text-center color-primary">Browser</h1>
 
-  <mat-form-field>
-    <mat-label>Hero finder</mat-label>
-    <input
-      type="text"
-      matInput
-      [formControl]="searchInput"
-      [matAutocomplete]="auto"
-    />
-  </mat-form-field>
+    <mat-divider class="mb-3"></mat-divider>
 
-  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-    <mat-option *ngFor="let hero of heroes | async" [value]="hero.superhero">
-      {{ hero.superhero }}
-    </mat-option>
-  </mat-autocomplete>
+    <mat-form-field class="mt-2">
+      <mat-label>Hero finder</mat-label>
+      <input
+        type="text"
+        matInput
+        [formControl]="searchInput"
+        [matAutocomplete]="auto"
+      />
+    </mat-form-field>
+
+    <mat-autocomplete autoActiveFirstOption
+      #auto="matAutocomplete"
+      (optionSelected)="onSelectedOption($event)"
+      >
+      <mat-option *ngFor="let hero of heroes | async" [value]="hero">
+        {{ hero.superhero }}
+      </mat-option>
+
+      <mat-option
+        *ngIf="searchInput.value?.length! > 0 && !hasHeroes">
+        No heroes were found with the name "{{ searchInput.value }}"
+      </mat-option>
+    </mat-autocomplete>
+
+    <mat-card
+      *ngIf="selectedHero"
+      class="col-12 md:col-4 border-round-xl border-3 color-primary">
+      <mat-card-header>
+        <mat-card-title>{{ selectedHero.alter_ego }}</mat-card-title>
+        <mat-card-subtitle>{{ selectedHero.superhero }}</mat-card-subtitle>
+        <button mat-button
+          mat-raised
+          class="color-primary"
+          [routerLink]="['/heroes', selectedHero.id]">
+          <mat-icon class="color-primary">more_horizontal</mat-icon>
+          Más
+        </button>
+      </mat-card-header>
+
+      <img
+        [src]="selectedHero | heroImage"
+        [alt]="selectedHero.superhero"
+        class="my-4 border-round-3xl border-3"/>
+    </mat-card>
+  </div>
 </div>

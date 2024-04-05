@@ -1,5 +1,4 @@
-<mat-card
-  class="border-round-xl border-3 color-primary">
+<mat-card class="border-round-xl border-3 color-primary">
 
   <mat-card-header>
     <mat-card-title>{{ hero.superhero }}</mat-card-title>
@@ -32,7 +31,7 @@
       class="color-primary"
       [routerLink]="['/heroes/edit', hero.id]">
       <mat-icon class="color-primary">edit</mat-icon>
-      Editar
+      Edit
     </button>
 
     <button mat-button
@@ -40,7 +39,7 @@
       class="color-primary"
       [routerLink]="['/heroes', hero.id]">
       <mat-icon class="color-primary">more_horizontal</mat-icon>
-      Más
+      Details
     </button>
   </mat-card-actions>
 </mat-card>

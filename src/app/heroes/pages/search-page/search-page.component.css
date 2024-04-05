@@ -1,0 +1,12 @@
+mat-card {
+  background-color: var(--secondary-color);
+  align-self: center;
+}
+
+mat-card-header {
+  justify-content: space-between;
+}
+
+.more-info {
+  align-self: end;
+}

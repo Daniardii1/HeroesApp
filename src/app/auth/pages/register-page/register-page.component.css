@@ -1,6 +1,6 @@
 #registerContainer {
-  background-color: #E4E8EE;
-  border-color: #1C5B92;
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
 }
 
 #title {
