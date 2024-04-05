@@ -1,0 +1,57 @@
+diff --git a/node_modules/json-server/lib/server/router/plural.js b/node_modules/json-server/lib/server/router/plural.js
+index 6b18226..61f8bf7 100644
+--- a/node_modules/json-server/lib/server/router/plural.js
++++ b/node_modules/json-server/lib/server/router/plural.js
+@@ -53,6 +53,7 @@ module.exports = (db, name, opts) => {
+     // Remove q, _start, _end, ... from req.query to avoid filtering using those
+     // parameters
+     let q = req.query.q;
++    let attr = req.query.attr;
+     let _start = req.query._start;
+     let _end = req.query._end;
+     let _page = req.query._page;
+@@ -62,6 +63,7 @@ module.exports = (db, name, opts) => {
+     const _embed = req.query._embed;
+     const _expand = req.query._expand;
+     delete req.query.q;
++    delete req.query.attr;
+     delete req.query._start;
+     delete req.query._end;
+     delete req.query._sort;
+@@ -85,15 +87,28 @@ module.exports = (db, name, opts) => {
+         q = q[0];
+       }
+       q = q.toLowerCase();
+-      chain = chain.filter(obj => {
+-        for (const key in obj) {
+-          const value = obj[key];
+-          if (db._.deepQuery(value, q)) {
+-            return true;
++      if (attr && typeof attr === 'string')
++      {
++        attr = attr.toLowerCase();
++        chain = chain.filter(obj => {
++          if (obj.hasOwnProperty(attr))
++          {
++            const value = obj[attr];
++            return value.toString().toLowerCase().includes(q);
+           }
+-        }
+-        return false;
+-      });
++          return false;
++        });
++      } else {
++        chain = chain.filter(obj => {
++          for (const key in obj) {
++            const value = obj[key];
++            if (db._.deepQuery(value, q)) {
++              return true;
++            }
++          }
++          return false;
++        });
++      }
+     }
+     Object.keys(req.query).forEach(key => {
+       // Don't take into account JSONP query parameters

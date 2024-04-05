@@ -35,22 +35,6 @@ export class HeroPageComponent implements OnInit{
     });
   }
 
-  getHeroKeyValue(hero: Hero): Record<string, string | undefined> {
-    const record: Record<string, string | undefined> = {};
-
-    for (const [key, value] of Object.entries(hero)) {
-
-      if (key !== 'publisher' && key !== 'alter_ego' && key !== 'first_appearance' && key !== 'characters') {
-        continue;
-      }
-      
-      record[key] = typeof value === 'string' || typeof value === 'undefined'
-        ? value
-        : value.toString();
-    }
-    return record;
-  }
-
   goBack(): void {
     this.router.navigate(['/heroes/list']);
   }
