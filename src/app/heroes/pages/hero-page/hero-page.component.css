@@ -1,0 +1,23 @@
+mat-card{
+  background-color: var(--secondary-color);
+}
+
+img {
+  max-height: 400px;
+  max-width: 300px;
+  align-self: center;
+  border-color: var(--primary-color);
+}
+
+@media screen and (min-width: 1070px){
+  img {
+    max-height: 600px;
+    max-width: 400px;
+  }
+}
+
+
+.button-container {
+  float: right;
+}
+

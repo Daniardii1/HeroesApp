@@ -1,16 +1,54 @@
-<div class="container p-5" id="container">
-  <div *ngIf="hero; else divLoading" class="grid">
-    <mat-card >
+<div class="container custom-container p-5" id="container">
+  <div *ngIf="hero;" class="grid py-4 px-8">
+    <mat-card class="col-12 sm:col-6 border-round-xl border-3 color-primary">
+      <mat-card-header>
+        <mat-card-title>{{ hero.alter_ego }}</mat-card-title>
+        <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
+      </mat-card-header>
 
+      <img
+        mat-card-image
+        [src]="hero | heroImage"
+        [alt]="hero.superhero"
+        class="my-4 border-round-3xl border-3">
     </mat-card>
+
+    <mat-card class="col-12 sm:col-6 px-6 border-round-xl border-3 color-primary">
+      <mat-card-header>
+        <mat-card-title>Information</mat-card-title>
+        <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let item of getHeroKeyValue(hero) | keyvalue">
+            <mat-icon matListItemIcon class="color-primary">arrow_right</mat-icon>
+            <h3 matListItemTitle class="text-base font-medium color-primary">{{ item.key | propertyFormatter}}</h3>
+            <p matListItemLine>
+              {{ item.value }}
+            </p>
+          </mat-list-item>
+        </mat-list>
+
+        <button
+          mat-raised-button
+          color="basic"
+          class="color-secondary button-container"
+          (click)="goBack()">
+          <span class="color-primary">Go back to list</span>
+          <mat-icon class="color-primary">keyboard_return</mat-icon>
+        </button>
+      </mat-card-content>
+    </mat-card>
+
   </div>
 
   <!-- TODO: Hacer loading en condiciones  -->
-  <ng-template #divLoading>
+  <!-- <ng-template #divLoading>
     <mat-grid-list cols="1">
       <mat-grid-tile>
         <mat-spinner></mat-spinner>
       </mat-grid-tile>
     </mat-grid-list>
-  </ng-template>
+  </ng-template> -->
 </div>

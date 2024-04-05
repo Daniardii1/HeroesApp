@@ -24,7 +24,7 @@ export class HeroPageComponent implements OnInit{
     this.activatedRoute.params
     .pipe(
       // TODO: borrar delay
-      delay(3000),
+      // delay(3000),
       switchMap(({id}) => this.heroesService.getHeroById(id)),
     )
     .subscribe( hero => {
@@ -33,5 +33,25 @@ export class HeroPageComponent implements OnInit{
       this.hero = hero;
       return;
     });
+  }
+
+  getHeroKeyValue(hero: Hero): Record<string, string | undefined> {
+    const record: Record<string, string | undefined> = {};
+
+    for (const [key, value] of Object.entries(hero)) {
+
+      if (key !== 'publisher' && key !== 'alter_ego' && key !== 'first_appearance' && key !== 'characters') {
+        continue;
+      }
+      
+      record[key] = typeof value === 'string' || typeof value === 'undefined'
+        ? value
+        : value.toString();
+    }
+    return record;
+  }
+
+  goBack(): void {
+    this.router.navigate(['/heroes/list']);
   }
 }
