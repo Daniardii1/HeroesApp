@@ -1,0 +1,9 @@
+<h2 mat-dialog-title class="color-primary">¿Are you sure?</h2>
+<mat-dialog-content>
+  <p>This process is irreversible, you are about to delete {{ data.superhero }}</p>
+</mat-dialog-content>
+<mat-dialog-actions class="p-3">
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <span class="spacer"></span>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

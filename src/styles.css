@@ -15,9 +15,9 @@ body {
   background-color: var(--neutral-color);
 }
 
+
 .mdc-text-field--filled {
   border-radius: 1rem !important;
-
 }
 
 .mdc-line-ripple {
@@ -49,6 +49,22 @@ body {
   height: 100vh;
 }
 
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: var(--secondary-color) !important;
+  border: 3px solid var(--primary-color) !important;
+}
+
+.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled),
+.mat-mdc-snack-bar-container .mdc-snackbar__label,
+.mdc-button .mdc-button__label {
+  color: var(--primary-color) !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: var(--neutral-color) !important;
+  border: 3px solid var(--primary-color) !important;
+  border-radius: 1rem !important;
+}
 
 ::-webkit-scrollbar {
   width: 8px;

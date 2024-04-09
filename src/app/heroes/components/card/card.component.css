@@ -11,3 +11,6 @@ mat-chip {
   background-color: var(--neutral-color) !important;
 }
 
+img {
+  height: 360px;
+}

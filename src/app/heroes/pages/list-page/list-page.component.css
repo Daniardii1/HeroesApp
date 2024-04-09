@@ -1,0 +1,16 @@
+@media (min-width: 1150px){
+  #cardContainer {
+    max-width: 20%;
+  }
+}
+@media (min-width: 980px) and (max-width: 1149px) {
+  #cardContainer {
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 699px) {
+  #cardContainer {
+    max-width: 70%;
+  }
+}

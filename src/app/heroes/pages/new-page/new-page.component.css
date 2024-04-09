@@ -5,3 +5,17 @@ mat-card {
 mat-form-field {
   padding-block: 0;
 }
+
+img {
+  max-height: 520px;
+  max-width: 300px;
+  border-width: 8px;
+  border-color: var(--secondary-color);
+}
+
+@media screen and (min-width: 1070px){
+  img {
+    max-height: 520px;
+    max-width: 400px;
+  }
+}

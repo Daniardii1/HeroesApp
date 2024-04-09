@@ -14,6 +14,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
 import { PropertyFormatterPipe } from './pipes/property-formatter.pipe';
 import { HeroKeyValuesPipe } from './pipes/herokeyvalues.pipe';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HeroKeyValuesPipe } from './pipes/herokeyvalues.pipe';
     HeroImagePipe,
     PropertyFormatterPipe,
     HeroKeyValuesPipe,
+    ConfirmDialogComponent,
   ],
   imports: [
     CommonModule,
