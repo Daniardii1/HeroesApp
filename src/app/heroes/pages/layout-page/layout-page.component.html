@@ -7,9 +7,12 @@
 
     <span class="spacer"></span>
 
-    <button mat-button>
-      <span class="color-secondary" order="1">Logout</span>
-      <mat-icon class="color-secondary" order="2">logout</mat-icon>
+    <mat-chip *ngIf="user" class="mr-3">
+      <span class="color-secondary">{{ user.usuario }}</span>
+    </mat-chip>
+    <button mat-button (click)="onLogout()">
+      <span class="color-secondary">Logout</span>
+      <mat-icon class="color-secondary">logout</mat-icon>
     </button>
   </mat-toolbar>
 
